@@ -19,9 +19,8 @@ export class CoursesComponent{
 
   courses;
 
-
-  constructor(){
-    let service = new CoursesService();
+//Dependency injection, decouples component from the service
+  constructor(service: CoursesService){
     this.courses = service.getCourses();
   }
   // logic to call http service, tighlt coupled. Duplicates code if used multiple time. View only
