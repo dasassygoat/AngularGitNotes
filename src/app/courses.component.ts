@@ -1,4 +1,4 @@
-import { getTestBed } from '@angular/core/testing';
+import { CoursesService } from './courses.service';
 import { Component } from '@angular/core';
 
 
@@ -17,7 +17,12 @@ import { Component } from '@angular/core';
 export class CoursesComponent{
   title = "List of courses";
 
-  courses = ["Course 1","Course 2","Course 3"];
+  courses;
 
+
+  constructor(){
+    let service = new CoursesService();
+    this.courses = service.getCourses();
+  }
   // logic to call http service, tighlt coupled. Duplicates code if used multiple time. View only
 }
