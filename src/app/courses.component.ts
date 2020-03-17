@@ -1,27 +1,21 @@
-import { CoursesService } from './courses.service';
+
 import { Component } from '@angular/core';
 
 
 @Component({
   selector: 'courses',
   template: `
-  <h2>{{"Title:"}}</h2>
-  <ul>
-    <li *ngFor="let course of courses">
-      {{course}}
-    </li>
-</ul>
+  <h2>{{title}}</h2>
+  <h2 [textContent]="title"></h2>
+
+  <img src="{{imageUrl}}"> <!-- this is syntatical sugar for the next lin -->
+  <img [src]="imageUrl" /> <!-- property binding only works one way here -->
+
   `
 })
 
 export class CoursesComponent{
   title = "List of courses";
 
-  courses;
-
-//Dependency injection, decouples component from the service
-  constructor(service: CoursesService){
-    this.courses = service.getCourses();
-  }
-  // logic to call http service, tighlt coupled. Duplicates code if used multiple time. View only
+  imageUrl = "http://lorempixel.com/400/200";
 }
