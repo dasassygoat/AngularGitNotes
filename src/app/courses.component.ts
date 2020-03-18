@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   selector: 'courses',
   template: `
   <img [src]="imageUrl"/>
-  <button class="btn btn-primary" [class.active]="isActive">Save</button>
+   <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button> <!-- dom style object prop -->
   `
 })
 
 export class CoursesComponent{
   colspan = 10;
-isActive = true;
+isActive = false;
   imageUrl = "http://lorempixel.com/400/200";
 }
