@@ -5,13 +5,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'courses',
   template: `
-  <img [src]="imageUrl"/>
-   <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button> <!-- dom style object prop -->
+<div (click)="onDivClicked">
+   <button (click)="onSave($event)">Save</button>
+</div>
   `
 })
 
 export class CoursesComponent{
-  colspan = 10;
-isActive = false;
-  imageUrl = "http://lorempixel.com/400/200";
+onSave($event){
+  // Keeps the event from bubbling up
+  $event.stopPropagation();
+  console.log("Button clicked", $event);
+}
+
+onDivClicked(){
+  console.log("Div was clicked");
+}
 }
