@@ -22,6 +22,7 @@ export class CoursesComponent{
 //   if ($event.keyCode === 13) { console.log("Enter was pressed") }
 // }
 
+// new way
 onKeyup(){
   console.log("Enter was pressed");
 }
