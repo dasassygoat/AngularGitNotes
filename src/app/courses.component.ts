@@ -5,20 +5,25 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'courses',
   template: `
-<div (click)="onDivClicked">
-   <button (click)="onSave($event)">Save</button>
-</div>
-  `
+
+   <!--
+   Old way
+   <input (keyup)="onKeyup($event)"/> -->
+
+   <!-- new way -->
+   <input (keyup.enter)="onKeyup()"/>
+
+ `
 })
 
 export class CoursesComponent{
-onSave($event){
-  // Keeps the event from bubbling up
-  $event.stopPropagation();
-  console.log("Button clicked", $event);
+// Old way to implement the feature not using filters
+// onKeyup($event){
+//   if ($event.keyCode === 13) { console.log("Enter was pressed") }
+// }
+
+onKeyup(){
+  console.log("Enter was pressed");
 }
 
-onDivClicked(){
-  console.log("Div was clicked");
-}
 }
