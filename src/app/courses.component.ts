@@ -6,20 +6,23 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'courses',
   template: `
-<!-- not the best method for two way binding -->
-   <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyup()"/>
-<!-- better way for two way binding useing the two way binding syntax -->
-   <input [(ngModel)]="email" (keyup.enter)="onKeyup()"/>
+{{course.title | uppercase | lowercase}}<br/>
+{{course.rating | number:'1.2-2'}}<br/> <!-- would round as needed -->
+{{course.students | number}}<br/>
+{{course.price | currency:'AUD':true:'3.2-2'}}<br/>
+{{course.releaseDate | date:'shortDate'}}
 
  `
 })
 
 export class CoursesComponent{
 
-email = "me@example.com";
-
-onKeyup(){
-  console.log(this.email);
-}
+  course = {
+    title:"The complete angular course",
+    rating: 4.9745,
+    students: 30123,
+    price:1990.95,
+    releaseDate: new Date(2016, 3, 1)
+  };
 
 }
