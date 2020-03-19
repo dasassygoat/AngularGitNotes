@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
     console.log("Favorite Changed", isFavorite.newValue);
   }
 }
-//could also create an interface
-interface FavoriteChangedEventArgs{
-  newValue:boolean
-}
+//could also create an interface but then it should ideally get moved the favorite.component to be exported
+// interface FavoriteChangedEventArgs{
+//   newValue:boolean
+// }
