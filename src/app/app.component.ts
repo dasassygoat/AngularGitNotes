@@ -11,7 +11,12 @@ export class AppComponent {
   isFavorite: true
   };
 
-  onFavoriteChanged(){
-    console.log("Favorite Changed");
+  // one way is the inline annotate the type, i.e isFavorite: {newValue:boolean} or...
+  onFavoriteChanged(isFavorite: FavoriteChangedEventArgs){
+    console.log("Favorite Changed", isFavorite.newValue);
   }
+}
+//could also create an interface
+interface FavoriteChangedEventArgs{
+  newValue:boolean
 }
