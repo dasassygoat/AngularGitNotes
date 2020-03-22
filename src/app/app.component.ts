@@ -7,9 +7,6 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isEmpty = false;
-  onClick(){
-    this.isEmpty = !this.isEmpty;
-  }
+  canSave = true;
 }
 
