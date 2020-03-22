@@ -7,6 +7,11 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  canSave = true;
+  task = {
+
+      id: 1,
+      assignee: null
+
+  };
 }
 
