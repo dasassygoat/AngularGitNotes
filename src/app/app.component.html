@@ -1,6 +1,7 @@
-
+<button (click)="onAdd()">Add</button>
 <ul>
-  <li *ngFor="let course of courses;even as e"> <!-- ngForOf is directive name -->
-    <span *ngIf=e> {{course.name}}</span>
+  <li *ngFor="let course of courses"> <!-- ngForOf is directive name -->
+    {{course.name}}
+    <button (click)="onChange(course)">Remove</button>
   </li>
 </ul>
