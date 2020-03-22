@@ -5,21 +5,21 @@ import { Directive, HostListener, ElementRef, Input } from '@angular/core';
 })
 export class InputFormatDirective {
 
-  @Input() format;
+  @Input() appInputFormat;
 
   constructor(private el:ElementRef) { }
 
   @HostListener('blur') onBlur(){
     let value:string = this.el.nativeElement.value;
 
-    if(this.format == "lowercase"){
+    if(this.appInputFormat == "lowercase"){
       this.el.nativeElement.value = value.toLowerCase();
     }
-    if(this.format == "uppercase"){
+    if(this.appInputFormat == "uppercase"){
       this.el.nativeElement.value = value.toUpperCase();
     }
 
-    console.log("The value is", this.format);
+    console.log("The value is", this.appInputFormat);
   }
 
 
